@@ -128,7 +128,8 @@ displayBigNumber(N1, 2); Serial.print("! =");
 displayBigNumber(N, 10); Serial.println();
 ```
 will answer:
-```2.00 10^(7.00 10^(2.30 10^(3.60 10^(9.00 10^1)))) ! = 
+```
+2.00 10^(7.00 10^(2.30 10^(3.60 10^(9.00 10^1)))) ! = 
 10^(1.4000000000 10^(7.0000000000 10^(2.3000000000 10^(3.6000000000 10^90))))
 ```
 To compute the value of (123 !! + 456 ! ) !, you can run the following code:
@@ -143,5 +144,6 @@ N = bigStirling(N4);
 displayBigNumber(N, 10); Serial.println();
 ```
 and it will answer:
-```10^(2.4847173221 10^(2.4847173221 10^207))
+```
+10^(2.4847173221 10^(2.4847173221 10^207))
 ```
