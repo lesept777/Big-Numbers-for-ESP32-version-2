@@ -67,6 +67,7 @@ true
 
 
 *2: Program your operations*
+
 Another way is to use the API, i.e. the available functions, to deal directly in C with the big numbers and do more complex calculations.
 
 To create an instance of a big number, first declare it:
@@ -107,13 +108,13 @@ bool lessThan (BigNumber const &, BigNumber const &);
 bool lessEqual (BigNumber const &, BigNumber const &);
 bool greaterThan (BigNumber const &, BigNumber const &);
 bool greaterEqual (BigNumber const &, BigNumber const &);
-// binary operations
 
+// binary operations
 BigNumber bigAdd (BigNumber &, BigNumber &);
 BigNumber bigMult (BigNumber &, BigNumber &);
 BigNumber bigPower (BigNumber &, BigNumber &);
-// unary operations
 
+// unary operations
 BigNumber bigStirling (BigNumber &);
 ```
 and for the display:
