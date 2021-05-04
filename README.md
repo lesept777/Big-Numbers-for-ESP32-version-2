@@ -31,6 +31,7 @@ Here are a few examples of big numbers that you can type:
 * 3p4P5^6 is the same as above.
 
 There are 2 ways of using it.
+
 *1: Type the operations*
 The simplest way is to type the operation you want, and the code will (try to) recognize it and provide the result. This is limited to simple calculations.
 
@@ -64,6 +65,7 @@ For the comparison:
 true
 ```
 
+
 *2: Program your operations*
 Another way is to use the API, i.e. the available functions, to deal directly in C with the big numbers and do more complex calculations.
 
@@ -87,3 +89,57 @@ displayBigNumber(N); Serial.println();
 ```
 displays on the monitor:
 `2.0000000000 10^(3.4000000000 10^(4.7772860466 10^58))`
+and
+```displayStruct(N); Serial.println();```
+provides:
+```4 floors
+mant: 2.0000000000000000
+floor 2 expo: 3.400000000000
+floor 3 expo: 4.777286046641
+floor 4 expo: 58
+```
+You can see that the fractional part of the last exponent has been moved to the previous floor: the value 1.2 has become 4.777. displayBigNumber accepts an integer as second argument to limit the number of digits displayed.
+
+Available functions are:
+```// operators
+bool isEqual (BigNumber const &, BigNumber const &);
+bool lessThan (BigNumber const &, BigNumber const &);
+bool lessEqual (BigNumber const &, BigNumber const &);
+bool greaterThan (BigNumber const &, BigNumber const &);
+bool greaterEqual (BigNumber const &, BigNumber const &);
+// binary operations
+
+BigNumber bigAdd (BigNumber &, BigNumber &);
+BigNumber bigMult (BigNumber &, BigNumber &);
+BigNumber bigPower (BigNumber &, BigNumber &);
+// unary operations
+
+BigNumber bigStirling (BigNumber &);
+```
+and for the display:
+```void displayBigNumber (BigNumber const &, uint8_t = 10);
+void displayStruct (BigNumber const &);
+```
+As an example:
+```N1 = set({2, 7, 23, 36, 89});
+N = bigStirling(N1);
+displayBigNumber(N1, 2); Serial.print("! =");
+displayBigNumber(N, 10); Serial.println();
+```
+will answer:
+```2.00 10^(7.00 10^(2.30 10^(3.60 10^(9.00 10^1)))) ! = 10^(1.4000000000 10^(7.0000000000 10^(2.3000000000 10^(3.6000000000 10^90))))
+```
+To compute the value of (123 !! + 456 ! ) !, you can run the following code:
+```BigNumber N1, N2, N3, N4, N;
+N1 = set({123});
+N2 = bigStirling(N1);
+N3 = bigStirling(N2);
+N1 = set({456});
+N2 = bigStirling(N1);
+N4 = bigAdd(N2, N3);
+N = bigStirling(N4);
+displayBigNumber(N, 10); Serial.println();
+```
+and it will answer:
+```10^(2.4847173221 10^(2.4847173221 10^207))
+```
