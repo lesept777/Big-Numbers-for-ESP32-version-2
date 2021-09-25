@@ -18,8 +18,9 @@ The code uses a simple syntax to recognize the operation. Here are the main feat
 * Type h or ? to get some help,
 * Use e or E for the exponent,
 * Use ^or p or P (for 'power') for exponentiation,
-* + and *
+* '+' and '*'
 * Use <, > or = for comparison
+* 
 Allowed characters are: digits, h ? e E ^ p P + * ! . < > = a A. All unknown characters are ignored.
 
 Here are a few examples of big numbers that you can type:
