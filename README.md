@@ -108,7 +108,7 @@ floor 2 expo: 3.400000000000
 floor 3 expo: 4.777286046641
 floor 4 expo: 58
 ```
-You can see that the fractional part of the last exponent has been moved to the previous floor: the value 1.2 has become 4.777. displayBigNumber accepts an integer as second argument to limit the number of digits displayed.
+You can see that the fractional part of the last exponent has been moved to the previous floor: the value 1.2 has become 4.777. `displayBigNumber` accepts an integer as second argument to limit the number of digits displayed.
 
 Available functions are:
 ```
