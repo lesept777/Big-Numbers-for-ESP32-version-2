@@ -20,7 +20,7 @@ The code uses a simple syntax to recognize the operation. Here are the main feat
 * Use ^or p or P (for 'power') for exponentiation,
 * '+' and '*'
 * Use <, > or = for comparison
-* 
+
 Allowed characters are: digits, h ? e E ^ p P + * ! . < > = a A. All unknown characters are ignored.
 
 Here are a few examples of big numbers that you can type:
